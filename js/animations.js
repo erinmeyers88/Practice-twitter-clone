@@ -43,12 +43,20 @@ $(document).ready(function () {
 	
 	//Adds new tweet to stream
 	
-	// $(".button").on("click", function () {
-	// 	$("#stream").prepend(
+	$(".button").on("click", function () {
+		var newTweet = $(".tweet").first().clone();
+			
+			$(newTweet).find(".avatar").attr("src", "img/ProfilePic.jpg");
+			
+			$(newTweet).find(".fullname").text("Erin Vincent");
+			
+			$(newTweet).find(".username").text("ev2015")
+			
+			var tweetContent = $(".tweet-compose").val()
+			$(newTweet).find(".tweet-text").text(tweetContent);
 		
-		
-		
-	// })
+		$("#stream").prepend(newTweet);
+	})
 	
 		
 		
