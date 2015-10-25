@@ -58,10 +58,43 @@ $(document).ready(function () {
 		$("#stream").prepend(newTweet);
 	})
 	
+	
+	//Hides and shows tweet actions
+	
+	$(".tweet-actions").hide();
 		
+	$(".tweet").hover(
+		function () {
+		$(".tweet-actions", this).show();
+	}, function () {
+		$(".tweet-actions", this).hide();
+	}
+	
+	);
 		
 
+	//Hides retweets, time stamp, etc.
 	
+	$(".stats").hide();
+	
+	var clicks = 0;
+	
+	$(".tweet-text").on("click", function () {
+		
+		clicks ++;
+		
+		if (clicks % 2 !== 0) {
+			
+			$(".stats").hide();
+			
+			}
+			
+		else {
+			$(".stats").show();
+		}
+		
+		
+	});
 	
 	
 	
